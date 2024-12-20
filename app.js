@@ -42,11 +42,13 @@ searchFrom.addEventListener('submit',(e)=>{
 
   e.preventDefault();
   page = 1;
-   searchImages()
-userSearch.value = ""
+   searchImages();
 })
+
 
 showMoreBtn.addEventListener('click',(e)=>{
    page++
    searchImages()
+
 })
+
