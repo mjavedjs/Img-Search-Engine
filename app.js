@@ -5,6 +5,8 @@ const showMoreBtn = document.querySelector(".button")
 let keyword = '';
 let page= 1;
 
+
+
 async function searchImages() {
 
     keyword = userSearch.value;
@@ -15,10 +17,19 @@ async function searchImages() {
       const response =   await fetch(url)
       const data = await response.json()
     console.log(data)
+
     if(page === 1){
       serachResult.innerHTML = ""
     }
+    
+
     const  result = data.results;
+    if (result.length === 0) {
+      alert("No results found!");
+      showMoreBtn.style.display = 'none'; // Hide the button if no results
+      return;
+    }
+
     
     result.map((res)=>{
       const img = document.createElement("img"); // imag k tag 
@@ -37,6 +48,8 @@ async function searchImages() {
     }
 
 }
+
+
 userSearch.innerHTML = ""
 searchFrom.addEventListener('submit',(e)=>{
 
@@ -44,6 +57,7 @@ searchFrom.addEventListener('submit',(e)=>{
   page = 1;
    searchImages();
 })
+
 
 
 showMoreBtn.addEventListener('click',(e)=>{

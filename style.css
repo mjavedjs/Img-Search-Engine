@@ -15,6 +15,102 @@ body {
     color: #333;
 }
 
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #ffffff;
+    border-bottom: 1px solid #eaeaea;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar__logo .logo-link {
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #111;
+    letter-spacing: -0.5px;
+}
+
+.navbar__categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    flex: 1;
+}
+
+.navbar__category {
+    text-decoration: none;
+    color: #111;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.navbar__category:hover {
+    color: #007aff;
+}
+
+.navbar__auth {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navbar__btn {
+    padding: 0.7rem 1.2rem;
+    background-color: #007aff;
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.navbar__btn:hover {
+    background-color: #005fcc;
+}
+
+.navbar__avatar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+}
+
+.avatar-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.avatar-name {
+    font-weight: 600;
+    color: #333;
+}
+
+.navbar__categories a {
+    font-size: 1rem;
+    padding: 0.5rem;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.navbar__categories a:hover {
+    background-color: #f5f5f5;
+    border-radius: 5px;
+}
+
+/* Adjust layout for responsiveness */
+
 h1 {
     font-size: 2rem;
     margin-bottom: 30px;
@@ -26,12 +122,14 @@ h1 {
 .search-form {
     display: flex;
     align-items: center;
+    justify-content:space-around;
     border: 1px solid #ccc;
     border-radius: 8px;
     background: #fff;
-    width: 400px;
+    width: 500px;
     padding: 5px;
     margin-bottom: 20px;
+    margin-top:100px ;
 }
 
 .icon-wrapper {
@@ -57,7 +155,7 @@ h1 {
 .search-button {
     background-color: #4caf50;
     color: #fff;
-    padding: 10px 20px;
+    padding: 10px 50px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -142,4 +240,38 @@ h1 {
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for better visuals */
     object-fit: cover; /* Ensures all images fill their grid cell without leaving gaps */
+}
+
+
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .navbar__logo {
+        margin-bottom: 10px;
+    }
+
+    .navbar__auth {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .navbar__categories {
+        display: none; /* Ensure it's still hidden */
+    }
+
+    .navbar__btn {
+        display: block; /* Show Get Unsplash+ button again for mobile */
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .navbar__avatar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+    }
 }
